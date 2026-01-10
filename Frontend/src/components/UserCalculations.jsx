@@ -90,7 +90,7 @@ export default function UserCalculations({ calculations: propCalculations }) {
             ) : (
               <div  style={{ overflowX: 'hidden', background: '#87efe1ff', padding: 12, borderRadius: 8 }}>
                 <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                  <thead className="stats-card">
+                  <thead style={{background:"#ddbcdf"}} >
                     <tr style={{ textAlign: 'left', borderBottom: '2px solid #eee' }}>
                       <th style={{ padding: '8px 12px' }}>Month</th>
                       <th style={{ padding: '8px 12px' }}>Data Wasted (kg CO₂/month)</th>
@@ -114,7 +114,7 @@ export default function UserCalculations({ calculations: propCalculations }) {
                       }
 
                       return (
-                        <tr className="stats-card" key={c._id} style={{ borderBottom: '1px solid #f0f0f0' }}>
+                        <tr key={c._id} style={{ borderBottom: '1px solid #f0f0f0', background:"#ddbcdf" }}>
                           <td style={{ padding: '10px 12px' }}>{monthText}</td>
                           <td style={{ padding: '10px 12px' }}>{c.dataWasted}</td>
                           <td style={{ padding: '10px 12px' }}>{detailsText}</td>
