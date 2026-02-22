@@ -1,0 +1,124 @@
+/* Floating Container */
+.floating-social-menu {
+  position: fixed;
+  right: 100px;
+  bottom: 80px;
+  z-index: 100;
+}
+
+/* Menu Circle */
+.floating-social-menu .menu {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Each Icon */
+.floating-social-menu .menu li {
+  position: absolute;
+  list-style: none;
+  transform: rotate(var(--angle)) translate(0px);
+  transition: 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+
+/* Active State → Move Out */
+.floating-social-menu .menu.active li {
+  transform: rotate(var(--angle)) translate(110px);
+}
+
+/* Icon Button */
+.floating-social-menu .menu li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: #ffffff;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  color: var(--color);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+/* Keep icons straight */
+.floating-social-menu .menu li a {
+  transform: rotate(calc(-1 * var(--angle)));
+}
+
+/* Hover Effect */
+.floating-social-menu .menu li a:hover {
+  transform: rotate(calc(-1 * var(--angle))) scale(1.2);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* Center Toggle Button */
+.floating-social-menu .toggle {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  color: #333;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.6s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* Outer Ring Effect */
+.floating-social-menu .toggle::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+}
+
+/* Rotate center button on open */
+.floating-social-menu .menu.active .toggle {
+  transform: rotate(360deg);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .floating-social-menu {
+    right: 20px;
+    bottom: 100px;
+  }
+
+  .floating-social-menu .menu {
+    width: 220px;
+    height: 220px;
+  }
+
+  .floating-social-menu .menu.active li {
+    transform: rotate(var(--angle)) translate(85px);
+  }
+
+  .floating-social-menu .menu li a {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+
+  .floating-social-menu .toggle {
+    width: 60px;
+    height: 60px;
+    font-size: 1.6rem;
+  }
+
+  .floating-social-menu .toggle::before {
+    width: 80px;
+    height: 80px;
+  }
+}

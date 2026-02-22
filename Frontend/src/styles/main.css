@@ -142,6 +142,30 @@ body {
   text-align: center;
 }
 
+.footer-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-text {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-clock-button {
+  flex-shrink: 0;
+  /* margin-left: auto; */
+}
+
 .footer p {
   margin-bottom: 10px;
 }

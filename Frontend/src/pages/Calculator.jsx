@@ -88,7 +88,7 @@ const Calculator = () => {
               { label: 'Monthly Electricity Usage (kWh)', name: 'electricity' },
               { label: 'Monthly Gas Usage (therms)', name: 'gas' },
               { label: 'Annual Car Mileage', name: 'carMileage' },
-              { label: 'Number of Flights (per year)', name: 'flights' },
+              { label: 'Number of Flights (this month)', name: 'flights' },
             ].map((field) => (
               <div className="form-group" key={field.name}>
                 <label>{field.label}</label>

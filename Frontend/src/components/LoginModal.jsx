@@ -20,7 +20,12 @@ export default function Login({ onClose, onLogin, onShowSignup }) {
     try {
       const { data } = await api.post("/auth/login", form);
       // include username returned by server into auth context
-      login({ token: data.token, role: data.role, name: data.name, username: data.username });
+      login({
+        token: data.token,
+        role: data.role,
+        name: data.name,
+        username: data.username,
+      });
       // if used as modal, notify parent and close
       if (onLogin) onLogin();
       if (onClose) onClose();
@@ -42,8 +47,7 @@ export default function Login({ onClose, onLogin, onShowSignup }) {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        background:
-          "linear-gradient(135deg, #dcfce7, #bbf7d0, #86efac)",
+        background: "linear-gradient(135deg, #dcfce7, #bbf7d0, #86efac)",
         padding: "16px",
       }}
     >
@@ -61,6 +65,7 @@ export default function Login({ onClose, onLogin, onShowSignup }) {
       >
         {/* Logo */}
         <div
+          onClick={() => nav("/")}
           style={{
             width: "64px",
             height: "64px",
@@ -74,7 +79,13 @@ export default function Login({ onClose, onLogin, onShowSignup }) {
             fontSize: "28px",
             fontWeight: "bold",
             boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
+            cursor: "pointer",
+            transition: "transform 0.2s ease",
           }}
+          onMouseEnter={(e) =>
+            (e.currentTarget.style.transform = "scale(1.05)")
+          }
+          onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
         >
           ⚡
         </div>
