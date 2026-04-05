@@ -1,0 +1,143 @@
+.community-page {
+  padding: 62px 0;
+  background:
+    radial-gradient(
+      circle at 10% 0,
+      rgba(102, 163, 125, 0.18),
+      transparent 36%
+    ),
+    linear-gradient(180deg, #e7efe9 0%, #dce8e1 100%);
+}
+
+.community-content {
+  max-width: 980px;
+  background: #fbfdfb;
+  border: 1px solid #ccddd0;
+  border-radius: 18px;
+  padding: 34px;
+  box-shadow:
+    0 10px 24px rgba(20, 57, 34, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.community-kicker {
+  display: inline-block;
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  color: #2f6947;
+  margin-bottom: 10px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #e3f1e7;
+  border: 1px solid #c4dccb;
+}
+
+.community-content h1 {
+  color: #133020;
+  margin-bottom: 6px;
+  line-height: 1.15;
+}
+
+.community-subtitle {
+  color: #506f5d;
+  margin-bottom: 18px;
+}
+
+.community-error {
+  color: crimson;
+}
+
+.community-rank-card {
+  border: 1px solid #d9e7dc;
+  border-left: 4px solid #5e9974;
+  background: #f4faf6;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 18px;
+}
+
+.community-rank-card h2 {
+  color: #1c4b33;
+  margin-bottom: 6px;
+}
+
+.community-rank-value {
+  font-size: 2rem;
+  color: #1a5438;
+  font-weight: 800;
+  margin: 6px 0;
+}
+
+.community-rank-note {
+  color: #31473a;
+}
+
+.community-suggestions {
+  border: 1px solid #d9e7dc;
+  background: #f7fbf8;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 18px;
+}
+
+.community-suggestions h2 {
+  color: #1c4b33;
+  margin-bottom: 10px;
+}
+
+.community-suggestions ul {
+  margin-left: 20px;
+}
+
+.community-suggestions li {
+  color: #31473a;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.community-table-wrap {
+  border: 1px solid #d9e7dc;
+  background: #f7fbf8;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.community-table-wrap h2 {
+  color: #1c4b33;
+  margin-bottom: 10px;
+}
+
+.community-table-scroll {
+  overflow-x: auto;
+}
+
+.community-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 620px;
+}
+
+.community-table th,
+.community-table td {
+  border-bottom: 1px solid #d9e7dc;
+  text-align: left;
+  padding: 10px;
+  color: #31473a;
+}
+
+.community-table thead th {
+  color: #1c4b33;
+  background: #eef6f1;
+}
+
+.community-table tbody tr:hover {
+  background: #eef6f1;
+}
+
+@media (max-width: 768px) {
+  .community-content {
+    padding: 20px;
+    border-radius: 12px;
+  }
+}

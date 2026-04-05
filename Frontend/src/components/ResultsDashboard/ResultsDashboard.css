@@ -1,0 +1,73 @@
+.results-dashboard {
+  margin-top: 32px;
+  display: grid;
+  gap: 20px;
+  background: linear-gradient(180deg, #f3ecde 0%, #efe6d6 100%);
+  border: 1px solid #d8cbb5;
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.results-total {
+  background: linear-gradient(135deg, #f9f0de, #efe1c5);
+  border: 1px solid #d2c1a2;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.results-total.level-low {
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+  border-color: #22c55e;
+}
+
+.results-total.level-moderate {
+  background: linear-gradient(135deg, #fef9c3, #fde68a);
+  border-color: #ca8a04;
+}
+
+.results-total.level-high {
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  border-color: #dc2626;
+}
+
+.level-chip {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.66);
+  color: #111827;
+}
+
+.results-total p {
+  color: #365314;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.results-total h2 {
+  color: #14532d;
+  font-size: 2rem;
+}
+
+.results-average {
+  margin-top: 6px;
+  margin-bottom: 4px;
+  font-size: 1rem;
+  color: #374151;
+}
+
+.results-charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .results-charts-grid {
+    grid-template-columns: 1fr;
+  }
+}

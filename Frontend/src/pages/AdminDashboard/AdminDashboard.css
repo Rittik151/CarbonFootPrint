@@ -1,0 +1,120 @@
+.dashboard-page {
+  padding: 60px 0;
+  background:
+    radial-gradient(
+      circle at 100% 0,
+      rgba(161, 183, 170, 0.2),
+      transparent 35%
+    ),
+    linear-gradient(180deg, #dce6e0 0%, #d3dfd9 100%);
+}
+
+.dashboard-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.stats-card {
+  background: #eef4f0;
+  border: 1px solid #c2d0c7;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 300ms ease;
+}
+
+.stats-card:hover {
+  transform: scale(1.04) translateY(-0.75rem);
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  z-index: 30;
+}
+
+.stats-card h3 {
+  color: #365448;
+  margin-bottom: 15px;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--dark-color);
+  margin: 10px 0;
+}
+
+.stat-comparison {
+  color: #8b7422;
+  font-size: 0.9rem;
+}
+
+.admin-usage-section {
+  margin-top: 26px;
+  background: #eef4f0;
+  border: 1px solid #c7d4cb;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.admin-usage-section h2 {
+  color: #2f4c40;
+  margin-bottom: 12px;
+}
+
+.admin-usage-table-wrap {
+  overflow-x: auto;
+}
+
+.admin-usage-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 980px;
+  background: #f8fbf9;
+  border: 1px solid #cfddd3;
+  border-radius: 10px;
+}
+
+.admin-usage-table th,
+.admin-usage-table td {
+  border-bottom: 1px solid #d9e4dc;
+  padding: 10px 8px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #2f493d;
+}
+
+.admin-usage-table thead th {
+  background: #e4efe7;
+  color: #254537;
+  font-weight: 700;
+}
+
+.admin-usage-table tbody tr:hover {
+  background: #f1f7f3;
+}
+
+.admin-usage-table tfoot th {
+  background: #dbe9e0;
+  color: #1e5338;
+}
+
+.admin-user-cell {
+  text-align: left;
+  display: grid;
+  gap: 2px;
+}
+
+.admin-user-cell strong {
+  color: #1f4033;
+}
+
+.admin-user-cell small {
+  color: #5e756a;
+}
+
+.admin-total-cell {
+  color: #1e6c40;
+  font-weight: 700;
+}

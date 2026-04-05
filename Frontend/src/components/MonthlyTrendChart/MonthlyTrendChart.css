@@ -1,0 +1,15 @@
+.chart-card {
+  background: #f8f0e2;
+  border: 1px solid #dbcab0;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.chart-card h3 {
+  color: #5d4a2a;
+  margin-bottom: 10px;
+}
+
+.chart-wrap {
+  height: 280px;
+}

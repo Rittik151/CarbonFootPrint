@@ -1,0 +1,22 @@
+.profile-page {
+  padding: 64px 0;
+  background: linear-gradient(180deg, #eef6f0 0%, #e3efe6 100%);
+}
+
+.profile-shell {
+  width: min(760px, 92%);
+  margin: 0 auto;
+  background: #fbfdfb;
+  border: 1px solid #ccddd0;
+  border-radius: 14px;
+  padding: 28px;
+}
+
+.profile-shell h1 {
+  color: #133020;
+  margin-bottom: 8px;
+}
+
+.profile-shell p {
+  color: #466252;
+}
