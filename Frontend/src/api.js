@@ -1,13 +1,51 @@
 import axios from 'axios';
 
+function base64UrlDecode(input) {
+    const normalized = input.replace(/-/g, '+').replace(/_/g, '/');
+    const padded = normalized.padEnd(Math.ceil(normalized.length / 4) * 4, '=');
+    return atob(padded);
+}
+
+function isExpiredJwt(token) {
+    try {
+        const payload = token.split('.')[1];
+        if (!payload) return true;
+        const decoded = JSON.parse(base64UrlDecode(payload));
+        if (!decoded.exp) return false;
+        return Date.now() >= decoded.exp * 1000;
+    } catch {
+        return true;
+    }
+}
+
+export function clearStoredAuth() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('role');
+    localStorage.removeItem('name');
+    localStorage.removeItem('username');
+}
+
+export function getValidStoredToken() {
+    const token = localStorage.getItem('token');
+    if (!token) return null;
+
+    if (isExpiredJwt(token)) {
+        clearStoredAuth();
+        return null;
+    }
+
+    return token;
+}
+
 export const api = axios.create({
     baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
 });
 
 // Keep Authorization in sync even after login/logout without page reload.
 api.interceptors.request.use((config) => {
-    const token = localStorage.getItem('token');
+    const token = getValidStoredToken();
     if (token) {
+        config.headers = config.headers || {};
         config.headers.Authorization = `Bearer ${token}`;
     } else if (config.headers?.Authorization) {
         delete config.headers.Authorization;

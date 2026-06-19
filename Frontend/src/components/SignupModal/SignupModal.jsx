@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { api } from "../../api";
 import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import './SignupModal.css';
+import "./SignupModal.css";
 
 export default function Register() {
   const { login } = useContext(AuthContext);
@@ -30,7 +30,7 @@ export default function Register() {
         name: data.name,
         username: data.username,
       });
-      nav("/dashboard");
+      nav("/");
     } catch (e) {
       setErr(e?.response?.data?.msg || "Register failed");
     } finally {

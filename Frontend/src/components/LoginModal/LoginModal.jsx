@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { api } from "../../api";
 import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import './LoginModal.css';
+import "./LoginModal.css";
 
 export default function Login({ onClose, onLogin, onShowSignup }) {
   const { login } = useContext(AuthContext);
@@ -30,10 +30,7 @@ export default function Login({ onClose, onLogin, onShowSignup }) {
       // if used as modal, notify parent and close
       if (onLogin) onLogin();
       if (onClose) onClose();
-      // fallback navigation when used as full page
-      if (!onLogin) {
-        nav(data.role === "admin" ? "/admin/dashboard" : "/dashboard");
-      }
+      nav("/");
     } catch (e) {
       setErr(e?.response?.data?.msg || "Login failed");
     } finally {

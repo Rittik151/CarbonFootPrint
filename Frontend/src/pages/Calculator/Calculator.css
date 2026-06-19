@@ -1,6 +1,6 @@
 .calculator-page {
   padding: 36px 0;
-  background: #f6fbf7;
+  background: linear-gradient(180deg, #eef6ff 0%, #f5faff 100%);
 }
 
 .calculator-page .container {
