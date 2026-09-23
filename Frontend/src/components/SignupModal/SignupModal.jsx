@@ -32,7 +32,13 @@ export default function Register() {
       });
       nav("/");
     } catch (e) {
-      setErr(e?.response?.data?.msg || "Register failed");
+      const responseData = e?.response?.data;
+      setErr(
+        responseData?.msg ||
+          responseData?.message ||
+          (typeof responseData === "string" ? responseData : null) ||
+          "Register failed",
+      );
     } finally {
       setLoading(false);
     }

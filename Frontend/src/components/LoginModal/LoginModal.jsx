@@ -32,7 +32,13 @@ export default function Login({ onClose, onLogin, onShowSignup }) {
       if (onClose) onClose();
       nav("/");
     } catch (e) {
-      setErr(e?.response?.data?.msg || "Login failed");
+      const responseData = e?.response?.data;
+      setErr(
+        responseData?.msg ||
+          responseData?.message ||
+          (typeof responseData === "string" ? responseData : null) ||
+          "Login failed",
+      );
     } finally {
       setLoading(false);
     }
